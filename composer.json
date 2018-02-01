@@ -1,0 +1,47 @@
+{
+  "name": "spooner-web/fluid-form-elements",
+  "type": "typo3-cms-extension",
+  "description": "Easy to use fluid form elements for Extbase/Fluid usage",
+  "homepage": "http://typo3.org",
+  "license": [
+    "GPL-2.0+"
+  ],
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "fluid",
+    "form",
+    "elements",
+    "easy"
+  ],
+  "authors": [
+    {
+      "name": "Thomas Löffler",
+      "email": "loeffler@spooner-web.de",
+      "homepage": "https://spooner-web.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.0 || ^7.1",
+    "typo3/cms-core": "^^8.7"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "SpoonerWeb\\FluidFormElements\\": "Classes/"
+    }
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor/",
+    "bin-dir": ".Build/bin/"
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  }
+}

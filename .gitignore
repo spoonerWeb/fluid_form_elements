@@ -1,0 +1,6 @@
+.idea/
+Thumbs.db
+*~
+.Build/Web
+.Build/bin
+.Build/vendor
