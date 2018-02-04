@@ -43,6 +43,11 @@ trait FormFieldTrait
     protected $propertyPath = '';
 
     /**
+     * @var string
+     */
+    protected $templateName = 'Default';
+
+    /**
      * @return void
      */
     public function initializeArguments()
@@ -120,7 +125,7 @@ trait FormFieldTrait
     public function getTemplate(): \TYPO3\CMS\Fluid\View\StandaloneView
     {
         $standalone = GeneralUtility::makeInstance(\TYPO3\CMS\Fluid\View\StandaloneView::class);
-        $templateFile = 'EXT:fluid_form_elements/Resources/Private/Templates/' . ConfigurationService::getSelectedFormFieldLayoutAsFolder() . '/Default.html';
+        $templateFile = 'EXT:fluid_form_elements/Resources/Private/Templates/' . ConfigurationService::getSelectedFormFieldLayoutAsFolder() . '/' . $this->templateName . '.html';
         $pathToTemplateFile = GeneralUtility::getFileAbsFileName($templateFile);
         $standalone->setTemplatePathAndFilename($pathToTemplateFile);
 
@@ -201,7 +206,7 @@ trait FormFieldTrait
      * @throws \TYPO3\CMS\Extbase\Persistence\Generic\Exception
      * @return string
      */
-    protected function getTableName(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $model): string
+    protected function  getTableName(\TYPO3\CMS\Extbase\DomainObject\AbstractDomainObject $model): string
     {
         $dataMapper = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper::class);
 
