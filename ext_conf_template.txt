@@ -1,0 +1,2 @@
+# cat=basic/enable; type=options[Bootstrap Default Form=0,Bootstrap Horizontal Form=1]; label=Selection of used layout for each form field
+formFieldLayout = 0
