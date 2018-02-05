@@ -1,7 +1,7 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Fluid Form Elements',
-    'description' => 'Easy to use form elements for Extbase/Fluid extensions',
+    'description' => 'Simplifies usage of core Fluid form elements',
     'category' => 'frontend',
     'author' => 'Thomas Löffler',
     'state' => 'beta',
