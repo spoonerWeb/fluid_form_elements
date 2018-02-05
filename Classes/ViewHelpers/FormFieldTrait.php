@@ -130,7 +130,7 @@ trait FormFieldTrait
         $standalone->setTemplatePathAndFilename($pathToTemplateFile);
 
         // If there is a file in the other extension in Resources/Private/Templates/FluidFormElements/Default.html, use this
-        $overrideTemplateFileByUsedExtension = 'EXT:' . GeneralUtility::camelCaseToLowerCaseUnderscored($this->extractExtensionNameFromClassName($this->className)) . '/Resources/Private/Templates/FluidFormElements/Default.html';
+        $overrideTemplateFileByUsedExtension = 'EXT:' . GeneralUtility::camelCaseToLowerCaseUnderscored($this->extractExtensionNameFromClassName($this->className)) . '/Resources/Private/Templates/FluidFormElements/' . $this->templateName . '.html';
         $pathToOverridingTemplateFile = GeneralUtility::getFileAbsFileName($overrideTemplateFileByUsedExtension);
         if (file_exists($pathToOverridingTemplateFile)) {
             $standalone->setTemplatePathAndFilename($pathToOverridingTemplateFile);
