@@ -45,7 +45,12 @@ trait FormFieldTrait
     /**
      * @var string
      */
-    protected $templateName = 'Default';
+    public $templateName = 'Default';
+
+    /**
+     * @var string
+     */
+    public $additionalClass = 'form-control';
 
     /**
      * @return void
@@ -54,6 +59,7 @@ trait FormFieldTrait
     {
         parent::initializeArguments();
         $this->registerArgument('label', 'string', 'If specified, will use this label instead of the determined one.');
+        $this->registerArgument('mainLabel', 'string', 'Label for the main part, describing the group of input elements');
     }
 
     /**
@@ -92,7 +98,7 @@ trait FormFieldTrait
             $this->tag->addAttribute('id', $this->propertyPath);
         }
         // Add bootstrap class
-        $class = $this->arguments['class'] ? $this->arguments['class'] . ' form-control' : 'form-control';
+        $class = $this->arguments['class'] ? $this->arguments['class'] . ' ' . $this->additionalClass : $this->additionalClass;
         $this->tag->addAttribute('class', $class);
 
         $content = parent::render();
